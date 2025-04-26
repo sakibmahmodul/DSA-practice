@@ -1,11 +1,10 @@
-arr = [7, 12, 9, 11, 11, 3]
-print(arr)
+# Insertion Sort
+arr = [7, 12, 9, 11, 3]
 n = len(arr)
-for i in range(1, n):
-    j = i-1
-    curr_value = arr[i]
-    while j>=0 and curr_value < arr[j]:
-        arr[j+1] = arr[j]
-        j -= 1
-    arr[j+1] = curr_value
+for i in range(n-1):
+    j = i+1
+    while j>0:
+        if arr[j]<arr[j-1]:
+            arr[j], arr[j-1] = arr[j-1], arr[j]
+            j -= 1
 print(arr)
